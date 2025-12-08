@@ -5,6 +5,8 @@ public class SpawnerBehaviour : MonoBehaviour
 {
     [SerializeField, Required] private GameObject prefabToSpawn;
 
+    private int ballsInAction = 0;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -16,15 +18,16 @@ public class SpawnerBehaviour : MonoBehaviour
     void SpawnPrefab()
     {
         float spawnX = Random.Range(-20f, 20f);
-        if (Scores.BallLeft > 0)
+        Debug.Log("Ball in action: " + Scores.ballsInAction);
+        if (Scores.ballLeft > 0)
         {
             Instantiate(prefabToSpawn, new Vector3(spawnX, transform.position.y, transform.position.z), Quaternion.identity);
-            Scores.BallLeft--;
+            Scores.ballLeft--;
+            Scores.ballsInAction++;
         }
-        else
+        if (Scores.ballLeft <= 0 && Scores.ballsInAction == 0)
         {
-            Debug.Log("No more balls left to spawn!");
-            //Todo : game over logic
+            Debug.Log("Game Over!");
         }
     }
 }

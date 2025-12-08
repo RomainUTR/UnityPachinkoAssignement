@@ -7,8 +7,17 @@ public class TriggerBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            Scores.BallLeft++;
-            Destroy(other.gameObject);
+            if (gameObject.CompareTag("RespawnTrigger"))
+            {
+                Scores.ballLeft++;
+                Scores.ballsInAction--;
+                Destroy(other.gameObject);
+            }
+            else if (gameObject.CompareTag("ClearTrigger"))
+            {
+                Scores.ballsInAction--;
+                Destroy(other.gameObject);
+            }
         }
     }
 }

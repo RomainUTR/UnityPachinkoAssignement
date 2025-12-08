@@ -1,4 +1,5 @@
 public static class Scores
 {
-    public static int BallLeft = 50;
+    public static int ballLeft = 50;
+    public static int ballsInAction = 0;
 }

@@ -8,6 +8,6 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        ballLeftText.text = $"Balls Left: {Scores.BallLeft}";
+        ballLeftText.text = $"Balls Left: {Scores.ballLeft}";
     }
 }
