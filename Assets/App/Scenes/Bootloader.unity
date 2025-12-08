@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3947a527bc0ba5f43bea28375658af73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Game
+  nextSceneName: MainMenu
   minLoadingTime: 2
   fadeOverlay: {fileID: 1881072216}
   logoTransform: {fileID: 1896994044}

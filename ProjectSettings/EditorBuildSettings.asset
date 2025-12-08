@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/App/Scenes/Bootloader.unity
     guid: 66b4527668b259c4aba03a10f45b609e
   - enabled: 1
+    path: Assets/App/Scenes/MainMenu.unity
+    guid: 03ad211344b37fe459e0b42f8c5118b0
+  - enabled: 1
     path: Assets/App/Scenes/Game.unity
     guid: 5b7c7b4d237596746bbe7ca6f9f9ebf9
   m_configObjects:
