@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 public class SpawnerBehaviour : MonoBehaviour
 {
     [SerializeField, Required] private GameObject prefabToSpawn;
+    [SerializeField, Required] private GameObject menuManager;
 
     private int ballsInAction = 0;
 
@@ -17,17 +18,21 @@ public class SpawnerBehaviour : MonoBehaviour
 
     void SpawnPrefab()
     {
-        float spawnX = Random.Range(-20f, 20f);
-        Debug.Log("Ball in action: " + Scores.ballsInAction);
-        if (Scores.ballLeft > 0)
+        if (!Scores.isGameEnded)
         {
-            Instantiate(prefabToSpawn, new Vector3(spawnX, transform.position.y, transform.position.z), Quaternion.identity);
-            Scores.ballLeft--;
-            Scores.ballsInAction++;
-        }
-        if (Scores.ballLeft <= 0 && Scores.ballsInAction == 0)
-        {
-            Debug.Log("Game Over!");
+            float spawnX = Random.Range(-20f, 20f);
+            Debug.Log("Ball in action: " + Scores.ballsInAction);
+            if (Scores.ballLeft > 0)
+            {
+                Instantiate(prefabToSpawn, new Vector3(spawnX, transform.position.y, transform.position.z), Quaternion.identity);
+                Scores.ballLeft--;
+                Scores.ballsInAction++;
+            }
+            if (Scores.ballLeft <= 0 && Scores.ballsInAction == 0)
+            {
+                Debug.Log("Game Over!");
+                menuManager.GetComponent<MenuManager>().GameOverMenu();
+            }
         }
     }
 }
