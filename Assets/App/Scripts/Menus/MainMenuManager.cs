@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField, Required] private string gameSceneName = "Game";
     [SerializeField, Required] private Button defaultButton;
     [SerializeField, Required] private TMP_Text titleText; // Cliquez sur le titre dans le jeu ^^'
+    [SerializeField, Required] private GameObject dlcPanel;
 
     private int clics = 0;
 
@@ -34,7 +35,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void OpenSettings()
     {
-        // Implementation for opening settings menu
+        dlcPanel.SetActive(true);
+    }
+
+    public void BuyDLC()
+    {
+        dlcPanel.SetActive(false);
     }
 
     public void ClickTitle()
