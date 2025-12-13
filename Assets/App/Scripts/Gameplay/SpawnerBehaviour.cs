@@ -20,7 +20,7 @@ public class SpawnerBehaviour : MonoBehaviour
     {
         if (!Scores.isGameEnded)
         {
-            float spawnX = Random.Range(-20f, 20f);
+            float spawnX = Random.Range(-19f, 19f);
             Debug.Log("Ball in action: " + Scores.ballsInAction);
             if (Scores.ballLeft > 0)
             {
